@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../static/layui.css" media="all">
+</head>
+<body>
+
+<ul class="layui-nav" lay-bar="disabled">
+    <li class="layui-nav-item">
+        <a href="">带徽章<span class="layui-badge">9</span></a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">小圆点<span class="layui-badge-dot"></span></a>
+    </li>
+    <li class="layui-nav-item" lay-unselect="">
+        <a href="javascript:"><img src="//t.cn/RCzsdCq" class="layui-nav-img"></a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:">子级菜单</a></dd>
+            <dd><a href="javascript:">横线隔断</a></dd>
+            <hr>
+            <dd style="text-align: center;"><a href="">退出</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<script src="../static/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
+<script>
+    layui.use('element', function () {
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        //监听导航点击
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>
